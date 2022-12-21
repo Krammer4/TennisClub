@@ -1,0 +1,831 @@
+/*--------------------------------------------- */
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* --------------------ОБНУЛЕНИЕ----------------------------------------- */
+html{
+  width:100%
+}
+.wrapper {
+min-height: 100%;
+overflow: hidden;
+}
+.border-bottom{
+  border-bottom: 1px solid #FFFFFF;
+  position: absolute;
+  top:106px;
+  z-index: 70;
+  width:100%;
+  height:0px;
+  opacity: 0.3;
+}
+
+._container {
+    max-width: 1296px;
+    margin: 0px auto;
+padding:0px 15px;
+}
+.header__imagecontainer{
+  max-width: 150px;
+}
+.header__img{
+  max-width: 100%;
+}
+.menu{
+  padding-left: 120px;
+  
+}
+.menu__list{
+  display:flex;
+  flex-wrap: wrap;
+  
+}
+@media(max-width:1271px){
+  .menu__list{justify-content:center;
+  }
+}
+.header{
+  margin-bottom: 1.5%;
+  padding-top: 1.5%;
+  position: absolute;
+  width: 100%;
+  z-index: 50;
+  
+}
+.header_container{
+  display: flex;
+  align-items: center;
+  
+  
+}
+@media (max-width: 777px){
+  .header_container{
+    flex-direction: column;
+  }
+  .header__media{
+    align-items: center;
+  }
+.border-bottom{
+  display: none;
+}
+.menu{
+  padding-left: 0px;
+}
+.menu__list{
+  justify-content: center;
+}
+
+}
+.header__imagecontainer{
+  align-items: center;
+  margin-right: 20px;
+}
+
+.menu__item{
+font-family: 'Gilroy';
+font-weight: 500;
+font-size: 14px;
+line-height: 140%;
+color:#ffffff;
+}
+.menu__item:not(:last-child){
+margin-right: 40px;
+}
+.header__media{
+  display: flex;
+  padding-left: 128px;
+
+}
+@media(max-width:777px){
+  .header__media{justify-content: center;
+    padding-left: 0px;
+  }
+}
+.header__icon_YT{
+  margin-right: 29.6px;
+ 
+}
+.page{
+  border-top: 1px solid #FFFFFF;
+  position: relative;
+}
+.page_container{
+  
+}
+.page_body{
+  position: relative;
+  z-index: 2;
+}
+@media (max-width:650px){
+  .page_body{
+    margin: 0px auto;
+  }
+  
+}
+
+.page__title{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 140%;
+max-width: 636px;
+margin-bottom: 75px;
+margin-top: 200px;
+color:#FFFFFF;
+}
+
+
+@media (max-width: 640px){
+  .page__title{
+    margin-top: 140px;
+  }
+}
+
+@media (max-width: 400px){
+  .page__title{
+    font-size: 38px;
+   
+  }
+}
+@media (max-width: 320px){
+  .page__title{
+    font-size: 28px;
+    margin-top: 160px;
+  }
+}
+.page__subtitle{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 140%;
+max-width: 158px;
+margin-bottom: 217px;
+color:#FFFFFF;
+}
+@media (max-width:787px){
+
+  .page__subtitle{
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    max-width: 500px;
+  }
+  .page__title{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+}
+@media (max-width:543px){
+
+  .page__subtitle{
+    margin-bottom: 70px;
+  }
+
+}
+
+.page__raw{
+  display: flex;
+ flex-wrap: nowrap;
+}
+.page__card{
+  background: #8D86C9;
+  max-width: 315px;
+  flex: 0 1 25%;
+  margin-right: 12px;
+  margin-bottom: 12px;
+
+  
+}
+
+@media (max-width: 787px){
+  .page__raw{
+    flex-wrap: wrap;
+    
+  }
+  .page__card{
+    flex: 0 1 33.33%;
+    
+  }
+}
+@media (max-width: 538px){
+  
+  .page__raw{
+    flex-direction: column;
+  }
+  .page__card{
+    margin-left: auto;
+    margin-right: auto;
+    flex: 0 1 100%;
+    width: 100%;
+  }
+  
+
+}
+
+.page__card-content{
+max-width: 100%;
+  margin: 35px 35px;
+}
+.pagecard__card-title{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 140%;
+color: #FFFFFF;
+}
+.pagecard__card-subtitle{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 140%;
+color: #FFFFFF;
+}
+._ibg{
+position: relative;
+}
+
+._ibg img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:0;
+  object-fit: cover;
+  
+  }
+  .page-bg{
+position: absolute;
+width: 100%;
+height: 100%;
+top:0;
+left:0
+  }
+  .page-bg img{
+    object-position: left;
+  }
+.info{
+
+}
+.info__page{
+
+}
+.info__body{
+
+}
+.info__cards-row{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 150px;
+  margin-bottom: 150px;
+}
+@media (max-width:787px){
+  .info__cards-row{
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  .info__card{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width:649px){
+  .info__cards-row{
+    flex-direction: column;
+    margin-bottom: 100px;
+    padding-top: 70px;
+  }
+  
+}
+.info__card{
+max-width: 376px;
+border: 1px solid #F7ECE1;
+padding: 25px;
+position: relative;
+display: flex;
+justify-content: center;
+}
+.info__card img{
+  max-width: 100%;
+  
+}
+.info__card-title{
+  position: absolute;
+  bottom:50px;
+  text-align: center;
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 700;
+font-size: 27px;
+line-height: 140%;
+color: #FFFFFF;
+
+max-width: 250px;
+}
+@media (max-width: 1158px){
+  .info__card-title{
+    font-size: 20px;
+  }
+}
+@media (max-width: 787px){
+  .info__card-title{
+    font-size: 26px;
+  }
+}
+@media (max-width: 383px){
+  .info__card-title{
+    font-size: 20px;
+  }
+}
+
+.info__jumpman{
+  max-width: 526px;
+  left: 110px;
+  position: relative;
+  z-index: 2;
+  top: 70px;
+}
+@media(max-width:997px){
+  .info__jumpman{
+    display: none;
+  }
+  .card__body{
+    padding-left: 60px;
+    
+  }
+
+}
+.info__jumpman img{
+  max-width: 100%;
+  
+}
+.sportclub__card{
+  background: #F7ECE1;
+}
+.sportclub{
+margin-bottom: 153px;
+display: flex;
+justify-content: center;
+
+}
+@media(max-width:720px){
+  .sportclub__card{
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+@media(max-width:615px){
+  .sportclub__card{
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
+.card__body{
+  max-width: 100%;
+  padding-left: 146px;
+  padding-right: 60px;
+  margin-bottom: 84px;
+}
+.card{
+  max-width: 636px;
+  z-index: 1;
+}
+@media (max-width:636px) {
+  .card{
+    max-width: 590px;
+  }
+  
+}
+
+@media (max-width:609px) {
+  .card{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+}
+@media (max-width:596px) {
+  .card{
+    max-width: 570px;
+  }
+  
+}
+.card__title{
+  padding-left: 60px;
+  padding-top: 70px;
+  margin-bottom: 25px;
+  font-family: 'Gilroy';
+  padding-right: 60px;
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 140%;
+color: #333333;
+}
+.card__subtitle{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+color: #333333;
+margin-bottom: 35px;
+}
+
+.card__sectitle{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 600;
+font-size: 21px;
+line-height: 140%;
+color: #333333;
+margin-bottom: 25px;
+}
+.card__list-item{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+color: #333333;
+}
+.card__list-item:not(:last-child){
+  margin-bottom: 20px;
+}
+.sportclub li{
+  margin-left: 15px;
+
+  background: url(/img/point.jpg);
+}
+.trainers{
+  margin-bottom: 150px;
+}
+.trainers__titlerow{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 75px;
+}
+.trainers__title{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 140%;
+color: #333333;
+}
+.trainers__arrow{
+  display: flex;
+  max-height: 45px;
+}
+
+.trainers__secarrow{
+margin-left: 15px;
+}
+.trainers__row{
+  display: flex;
+  justify-content: space-between;
+}
+.trainers__card{
+  border: 1px solid #F7ECE1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (max-width:787px){
+  .trainers__row{
+    flex-direction: column;
+    align-items: center;
+  }
+  .trainers__card{
+    max-width: 200px;
+    
+  }
+  .trainers__titlerow{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+.trainers__name{
+  text-align: center;
+  padding-top: 25px;
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 600;
+font-size: 21px;
+line-height: 140%;
+color: #333333;
+}
+.trainers__description{
+  max-width: 200px;
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 140%;
+text-align: center;
+color: #333333;
+padding-top: 15px;
+}
+@media (max-width:787px){
+  .trainers__description{
+    display: none;
+  }
+  .trainers__name{
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+}
+.ps{
+  margin-bottom: 150px;
+}
+.ps__row{
+  display: flex;
+  justify-content: space-between;
+}
+@media(max-width:1205px){
+  .ps__row{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .ps__price{
+    margin-bottom: 90px;
+    width: 100%;
+  }
+  .ps__service{
+    
+  }
+}
+@media(max-width:787px){
+
+.serv__title-row{
+  flex-direction: column;
+  align-items: center;
+  
+}
+.serv__title{
+ 
+  padding-left:420px;
+}
+.serv{
+  display: none;
+}
+.ps__price-title{
+  text-align: center;
+}
+.ps__row{
+  margin-left: 20px;
+}
+}
+@media(max-width:447px){
+
+.ps__price-card__arrow{
+  display: none;
+}
+.ps__price-card__title{
+  margin-left: 50px ;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+}
+.ps__price{
+  max-width: 526px;
+  margin-right: 20px;
+  
+}
+.ps__price-title{
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 140%;
+  color: #333333;
+  margin-bottom: 75px;
+}
+.ps__price-card{
+  display: flex;
+  max-width: 526px;
+  background: #8D86C9;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.ps__price-card:not(:last-child){
+  margin-bottom: 30px;
+}
+
+.ps__price-card__title{
+  padding-left: 30px;
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 600;
+font-size: 21px;
+line-height: 140%;
+color: #FFFFFF;
+padding-top: 15.5px;
+padding-bottom: 15.5px;
+margin-right: 150px;
+
+}
+.ps__price-card img{
+  max-height: 20px;
+  padding-right: 35px;
+ 
+}
+.ps__service{
+max-width: 636px;
+
+}
+.serv__title-row{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 75px;
+}
+.serv__arrow{
+  display: flex;
+}
+.serv__secarrow{
+  margin-left: 15px;
+}
+.serv__title{
+  padding-right: 419px;
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 140%;
+color: #333333;
+}
+.serv__card{
+  border: 1px solid #F7ECE1;
+  padding: 30px 25px;
+  position: relative;
+}
+.serv__card-title{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 700;
+font-size: 27px;
+line-height: 140%;
+position: absolute;
+bottom: 60px;
+z-index: 2;
+left: 65px;
+color:#FFFFFF;
+}
+.footer{
+  background: #F7ECE1;
+}
+.footer__body{
+  display: flex;
+  padding-top: 38px ;
+  padding-bottom: 38px ;
+  align-items: center;
+  justify-content: space-between;
+}
+@media(max-width:777px){
+  .footer__body{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  .footer__rights{
+    margin-bottom: 15px;
+    order:3;
+  }
+  .footer__menu{
+    margin-bottom: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+    order:1;
+  }
+  .footer-item{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .footer__media{
+    order:2;
+    margin-bottom: 25px;
+  }
+  
+}
+._footer-item{
+  color:#000000;
+  
+ 
+}
+.footer__media{
+  display: flex;
+}
+.footer__media img:not(:last-child){
+  padding-right: 25px;
+}
+.footer__menu{
+  padding-left: 15px;
+  margin-left: 0px;
+ margin-right: 40px;
+}
+.footer__rights{
+  font-family: 'Gilroy';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 140%;
+color: #333333;
+opacity: 0.3;
+
+}
